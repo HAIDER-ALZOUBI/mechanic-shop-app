@@ -1,0 +1,45 @@
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Expo / RN cache & build
+.expo/
+.expo-shared/
+dist/
+web-build/
+coverage/
+
+# iOS / Android native builds
+ios/Pods/
+ios/build/
+ios/DerivedData/
+android/.gradle/
+android/.idea/
+android/build/
+android/app/build/
+
+# OS / Editor
+.DS_Store
+*.iml
+*.swp
+.vscode/
+.idea/
+
+# App data we don't want in git
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+*.key
+*.pem
+
+# Generated files (PDFs, receipts, DB, backups)
+**/data/**
+**/backups/**
+*.pdf
