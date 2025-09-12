@@ -1,30 +1,11 @@
+// babel.config.js
 module.exports = function (api) {
   api.cache(true);
-
   return {
-    presets: [
-      [
-        'babel-preset-expo',
-        {
-          jsxImportSource: 'nativewind',
-        },
-      ],
-      'nativewind/babel',
-    ],
-
+    presets: ['babel-preset-expo'],
     plugins: [
-      [
-        'module-resolver',
-        {
-          root: ['./'],
-
-          alias: {
-            '@': './',
-            'tailwind.config': './tailwind.config.js',
-          },
-        },
-      ],
-      'react-native-reanimated/plugin',
+      // keep only reanimated while things stabilize
+      'react-native-reanimated/plugin', // must be last
     ],
   };
 };

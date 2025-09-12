@@ -1,12 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Button } from '../../components/ui/button';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { colors } from '../theme';
+
+import DashboardStats from './dashboard/DashboardStats';
+import RevenueChart from './dashboard/RevenueChart';
+import RecentActivity from './dashboard/RecentActivity';
 
 export default function Dashboard() {
   return (
-    <View style={{ flex: 1, padding: 16, gap: 12 }}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Dashboard</Text>
-      <Button>Test Button</Button>
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <DashboardStats />
+      <View style={{ height: 12 }} />
+      <RevenueChart />
+      <View style={{ height: 12 }} />
+      <RecentActivity />
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { padding: 16, backgroundColor: colors.background, gap: 12 },
+});
