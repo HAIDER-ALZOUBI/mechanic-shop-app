@@ -3,17 +3,14 @@ import { View } from 'react-native';
 import { SimpleCard } from '../../../components/ui/simple-card';
 import { colors } from '../../theme';
 
+// RevenueChart.tsx
 import {
-  VictoryChart,
-  VictoryAxis,
-  VictoryBar,
-  VictoryGroup,
-  VictoryLegend,
-  VictoryTheme,
+  VictoryChart, VictoryAxis, VictoryBar, VictoryGroup, VictoryLegend
 } from 'lib/VictoryCompat';
 
+
 const data = [
-  { month: 'Jan', income: 2000, expenses: 3200 },
+  { month: 'Jan', income: 8500, expenses: 3200 },
   { month: 'Feb', income: 9200, expenses: 3800 },
   { month: 'Mar', income: 11800, expenses: 4100 },
   { month: 'Apr', income: 10500, expenses: 3900 },
@@ -26,12 +23,13 @@ export default function RevenueChart() {
     <SimpleCard title="Income vs Expenses" subtitle="Monthly revenue and parts expenses comparison">
       <View style={{ height: 300 }}>
         <VictoryChart
-          theme={VictoryTheme.material}
+          // theme={VictoryTheme.material} // ❌ remove to avoid 'material of undefined'
           padding={{ top: 20, bottom: 50, left: 60, right: 20 }}
           domainPadding={{ x: 25 }}
         >
           <VictoryLegend
-            x={80} y={0}
+            x={80}
+            y={0}
             orientation="horizontal"
             gutter={20}
             data={[
@@ -41,7 +39,7 @@ export default function RevenueChart() {
             style={{ labels: { fill: colors.textPrimary } }}
           />
           <VictoryAxis
-            tickValues={data.map(d => d.month)}
+            tickValues={data.map((d) => d.month)}
             style={{
               axis: { stroke: colors.border },
               tickLabels: { fill: colors.textSecondary, fontSize: 12 },
@@ -50,7 +48,8 @@ export default function RevenueChart() {
           />
           <VictoryAxis
             dependentAxis
-            tickFormat={(v: number) => `$${v}`}            style={{
+            tickFormat={(v) => `$${v}`}
+            style={{
               axis: { stroke: colors.border },
               tickLabels: { fill: colors.textSecondary, fontSize: 12 },
               grid: { stroke: '#2a3550', strokeDasharray: '4,4' },
@@ -58,11 +57,11 @@ export default function RevenueChart() {
           />
           <VictoryGroup offset={14}>
             <VictoryBar
-              data={data.map(d => ({ x: d.month, y: d.income }))}
+              data={data.map((d) => ({ x: d.month, y: d.income }))}
               style={{ data: { fill: colors.primary, borderRadius: 4 } }}
             />
             <VictoryBar
-              data={data.map(d => ({ x: d.month, y: d.expenses }))}
+              data={data.map((d) => ({ x: d.month, y: d.expenses }))}
               style={{ data: { fill: '#8892b0', borderRadius: 4 } }}
             />
           </VictoryGroup>
