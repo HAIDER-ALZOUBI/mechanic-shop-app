@@ -33,7 +33,7 @@ export default function App() {
         screenOptions={{
           headerStyle: { backgroundColor: colors.surface },
           headerTintColor: colors.textPrimary,
-          headerTitleStyle: { fontWeight: 'bold' },
+          headerTitleStyle: { fontWeight: 'bold' , fontSize: 30},
           tabBarStyle: { backgroundColor: colors.surface, borderTopColor: colors.border },
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.textSecondary,

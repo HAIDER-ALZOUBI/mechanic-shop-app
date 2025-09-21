@@ -19,9 +19,7 @@ export default function Dashboard() {
         minHeight: '100%',
       }}
     >
-      {/* Page title */}
-      <Text style={{ color: '#f9fafb', fontSize: 22, fontWeight: '800' }}>Dashboard</Text>
-
+      
       {/* Top row: stats + chart */}
       <View
         style={{
